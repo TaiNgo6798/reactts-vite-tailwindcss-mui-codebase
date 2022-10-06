@@ -1,0 +1,11 @@
+server {
+  listen 80  default_server;
+  
+  # Always serve index.html for any request
+  location / {
+    add_header 'Access-Control-Allow-Origin' '*';
+    # Set path
+    root /usr/share/nginx/html;
+    try_files $uri $uri/ /index.html;
+  }
+}
